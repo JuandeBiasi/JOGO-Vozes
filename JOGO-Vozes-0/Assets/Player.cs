@@ -23,6 +23,8 @@ public class Player : MonoBehaviour
                      private float dashCooldownTimer;
 
     [Header("Attack info")]
+   [SerializeField] private float comboTime = .3f;
+    private float comboTimeWindow;
     private bool isAttacking;
     private int comboCounter;
 
@@ -59,6 +61,7 @@ public class Player : MonoBehaviour
 
         dashTime -= Time.deltaTime;
         dashCooldownTimer -= Time.deltaTime;
+        comboTimeWindow -= Time.deltaTime;
 
 
         if (dashTime > 0)
@@ -79,6 +82,10 @@ public class Player : MonoBehaviour
 
         if (comboCounter > 2)
             comboCounter = 0;
+
+       
+
+
     }
 
     private void CollisionChecks()
@@ -92,7 +99,7 @@ public class Player : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
-            isAttacking = true;
+            StartAttackEvent();
         }
 
 
@@ -109,9 +116,23 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void StartAttackEvent()
+    {
+        if (!isGrounded)
+            return;
+
+
+        if (comboTimeWindow < 0)
+            comboCounter = 0;
+
+
+        isAttacking = true;
+        comboTimeWindow = comboTime;
+    }
+
     private void DashAbility()
     {
-        if (dashCooldownTimer < 0)
+        if (dashCooldownTimer < 0 && !isAttacking)
         {
 
             dashCooldownTimer = dashCooldown;
@@ -121,9 +142,15 @@ public class Player : MonoBehaviour
 
     private void Movement()
     {
-        if (dashTime >0)
+        if (isAttacking)
         {
-            rb.velocity = new Vector2(xInput * dashSpeed, 0);
+            rb.velocity = new Vector2(0, 0);
+        }
+
+
+       else if (dashTime >0)
+        {
+            rb.velocity = new Vector2(facingDir * dashSpeed, 0);
         }
         else
         {
