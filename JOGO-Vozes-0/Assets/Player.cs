@@ -5,12 +5,11 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.XR;
 
-public class Player : MonoBehaviour
+public class Player : Entity
 {
-    private Rigidbody2D rb;   
-    private Animator anim;
-
-
+    
+        
+    [Header ("Move info")]
     [SerializeField] private float moveSpeed;
     [SerializeField] private float jumpForce;
 
@@ -33,28 +32,26 @@ public class Player : MonoBehaviour
 
     private float xInput;
 
-    private int facingDir = 1;
-    private bool facingRight = true;
+    
 
-    [Header ("Collision info")]
-    [SerializeField] private float groundCheckDistance;
-    [SerializeField] private LayerMask whatIsGround;
-    private bool isGrounded;
+   
+    
 
-     
 
+    protected override void Start()
+    {
+        base.Start();
+    }
 
 
     // Start is called before the first frame update
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        anim = GetComponentInChildren<Animator>();
-    }
+
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
+        base.Update();
+
         Movement();
         CheckInput();
         CollisionChecks();
@@ -88,10 +85,7 @@ public class Player : MonoBehaviour
 
     }
 
-    private void CollisionChecks()
-    {
-        isGrounded = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, whatIsGround);
-    }
+  
 
     private void CheckInput()
     {
@@ -177,12 +171,7 @@ public class Player : MonoBehaviour
         anim.SetBool("isAttacking", isAttacking);
         anim.SetInteger("comboCounter", comboCounter);
     }
-    private void Flip()
-    {
-        facingDir = facingDir * -1;
-        facingRight = !facingRight;
-        transform.Rotate (0, 180, 0);
-    }
+ 
 
     private void FlipContoller()
     {
@@ -196,8 +185,5 @@ public class Player : MonoBehaviour
        
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawLine(transform.position, new Vector3(transform.position.x , transform.position.y - groundCheckDistance));
-    }
+   
 }
