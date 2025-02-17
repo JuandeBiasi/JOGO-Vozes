@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 3640319724507575318}
   - component: {fileID: 8262976491216246922}
   - component: {fileID: 7555523134314298059}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,6 +227,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundCheck: {fileID: 3774395587132904214}
   groundCheckDistance: 1.47
+  wallCheck: {fileID: 0}
+  wallCheckDistance: 0
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
