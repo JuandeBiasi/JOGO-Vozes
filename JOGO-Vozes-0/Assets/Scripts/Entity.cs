@@ -6,7 +6,7 @@ public class Entity : MonoBehaviour
 {
     #region components
     public Animator anim { get; private set; }
-    public Rigidbody2D rb { get; private set; }
+    public Rigidbody2D rb { get; private set; } 
     #endregion
 
     [Header("Colision Info")]
@@ -28,6 +28,8 @@ public class Entity : MonoBehaviour
     protected virtual void Start () 
     
     {
+       
+
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
 
@@ -36,14 +38,14 @@ public class Entity : MonoBehaviour
 
     protected virtual void Update() 
     {
-
+       
 
     }
 
     #region SetVelocity
-    public void ZeroVelocity() => rb.velocity = new Vector2(0, 0);
+    public  void SetZeroVelocity() => rb.velocity = new Vector2(0, 0);
 
-    public void SetVelocity(float _xVelocity, float _yVelocity)
+    public  void SetVelocity(float _xVelocity, float _yVelocity)
     {
         rb.velocity = new Vector2(_xVelocity, _yVelocity);
         FlipController(_xVelocity);
@@ -68,14 +70,14 @@ public class Entity : MonoBehaviour
 
     #region Flip
 
-    public void Flip()
+    public virtual void Flip()
     {
         facingDir = facingDir * -1;
         facingRight = !facingRight;
         transform.Rotate(0, 180, 0);
     }
 
-    public void FlipController(float _x)
+    public virtual void FlipController(float _x)
     {
         if (_x > 0 && !facingRight)
             Flip();

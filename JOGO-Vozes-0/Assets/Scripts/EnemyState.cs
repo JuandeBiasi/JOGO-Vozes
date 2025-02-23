@@ -6,6 +6,7 @@ public class EnemyState
 {
     protected EnemyStateMachine stateMachine;
     protected Enemy enemyBase;
+    protected Rigidbody2D rb;
 
 
     private string animBoolName;
@@ -13,15 +14,16 @@ public class EnemyState
     protected float stateTimer;
     protected bool triggerCalled;
 
-    public EnemyState(Enemy _enemy, EnemyStateMachine _stateMachine, string _animBoolName)
+    public EnemyState(Enemy _enemyBase, EnemyStateMachine _stateMachine, string _animBoolName)
     {
-        this.enemyBase = _enemy;
+        this.enemyBase = _enemyBase;
         this.stateMachine = _stateMachine;
         this.animBoolName = _animBoolName;
     }
 
     public virtual void Update()
     {
+        Debug.Log("Update rodando no Enemy");
         stateTimer -= Time.deltaTime;
     }
 
@@ -29,6 +31,7 @@ public class EnemyState
     public virtual void Enter()
     {
         triggerCalled = false;
+        rb = enemyBase.rb;
         enemyBase.anim.SetBool(animBoolName,true);
 
     }
@@ -39,6 +42,9 @@ public class EnemyState
         enemyBase.anim.SetBool(animBoolName, false);
     }
 
-
+    public virtual void AnimationFinishTrigger()
+    {
+        triggerCalled=true;
+    }
 
 }

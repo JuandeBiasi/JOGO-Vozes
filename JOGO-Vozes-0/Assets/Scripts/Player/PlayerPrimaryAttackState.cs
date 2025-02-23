@@ -57,7 +57,7 @@ public class PlayerPrimaryAttackState : PlayerState
         base.update();
 
         if (stateTimer < 0)
-            player.ZeroVelocity();
+            player.SetZeroVelocity();
 
         if (triggerCalled)
             stateMachine.ChangeState(player.idleState);
