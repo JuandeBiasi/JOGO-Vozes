@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -9,6 +10,7 @@ public class Player : Entity
 
     [Header("attack details")]
     public Vector2[] attackMovement;
+    public float counterAttackDuration = .2f;
    
 
 
@@ -47,7 +49,9 @@ public class Player : Entity
     public PlayerDashState dashState { get; private set; }
     public PlayerWallSlideState wallSlide { get; private set; }
     public PlayerWallJumpState wallJump { get; private set; }
+
     public PlayerPrimaryAttackState PrimaryAttack { get; private set; }
+    public PlayerCounterAttackState CounterAttack { get; private set; }
     #endregion
    protected override void Awake()
     {
@@ -61,7 +65,10 @@ public class Player : Entity
         dashState = new PlayerDashState(this, StateMachine, "Dash");
         wallSlide = new PlayerWallSlideState(this, StateMachine, "WallSlide");
         wallJump = new PlayerWallJumpState(this, StateMachine, "Jump");
+
         PrimaryAttack = new PlayerPrimaryAttackState(this, StateMachine, "Attack");
+        CounterAttack = new PlayerCounterAttackState(this, StateMachine, "CounterAttack");
+        
     }
 
     protected override void Start()
