@@ -52,6 +52,11 @@ public class Player : Entity
 
     public PlayerPrimaryAttackState PrimaryAttack { get; private set; }
     public PlayerCounterAttackState CounterAttack { get; private set; }
+
+    public PlayerAimSwordState AimSword { get; private set; }
+    public PlayerCatchSwordState catchSword { get; private set; }
+
+    public PlayerDeadState DeadState { get; private set; }
     #endregion
    protected override void Awake()
     {
@@ -68,6 +73,11 @@ public class Player : Entity
 
         PrimaryAttack = new PlayerPrimaryAttackState(this, StateMachine, "Attack");
         CounterAttack = new PlayerCounterAttackState(this, StateMachine, "CounterAttack");
+
+        AimSword = new PlayerAimSwordState(this, StateMachine, "AimSword");
+        catchSword = new PlayerCatchSwordState(this, StateMachine, "CatchSword");
+
+        DeadState = new PlayerDeadState(this, StateMachine, "Die");
         
     }
 
@@ -125,8 +135,13 @@ public class Player : Entity
         }
     }
 
- 
-   
-    
+
+
+    public override void Die()
+    {
+        base.Die();
+
+        StateMachine.ChangeState(DeadState);
+    }
 
 }

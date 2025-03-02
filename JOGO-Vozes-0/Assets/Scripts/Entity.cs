@@ -8,6 +8,8 @@ public class Entity : MonoBehaviour
     public Animator anim { get; private set; }
     public Rigidbody2D rb { get; private set; } 
     public EntityFX fX { get; private set; }
+    public CharacterStats stats { get; private set; }
+    public CapsuleCollider2D cd { get; private set; }
     #endregion
 
     [Header("Knockback info")]
@@ -41,6 +43,9 @@ public class Entity : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
 
+        stats = GetComponent<CharacterStats>();
+        cd = GetComponent<CapsuleCollider2D>();
+
 
     }
 
@@ -49,7 +54,7 @@ public class Entity : MonoBehaviour
        
 
     }
-    public virtual void Damage()
+    public virtual void DamageEffect()
     {
         fX.StartCoroutine("FlashFX");
         StartCoroutine("HitKnockback");
@@ -125,5 +130,14 @@ public class Entity : MonoBehaviour
             Flip();
     }
     #endregion
+
+
+
+
+
+    public virtual void Die()
+    {
+
+    }
 
 }
