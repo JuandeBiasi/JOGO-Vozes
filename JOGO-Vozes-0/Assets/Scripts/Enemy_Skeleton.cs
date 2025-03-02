@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Enemy_Skeleton : Enemy
 {
+    public GameObject foodPrefab;
+
+
     #region States
     public SkeletonIdleState idleState { get; private set; }
     public SkeletonMoveState moveState { get; private set; }
@@ -58,7 +61,15 @@ public class Enemy_Skeleton : Enemy
     public override void Die()
     {
         base.Die();
+        DropItem();
 
         stateMachine.ChangeState(deadState);
     }
+
+    private void DropItem()
+    {
+        // Implementação do drop (instancia um item no mundo)
+        Instantiate(foodPrefab, transform.position, Quaternion.identity);
+    }
+
 }
