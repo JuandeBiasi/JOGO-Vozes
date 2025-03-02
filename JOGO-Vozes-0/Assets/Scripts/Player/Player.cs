@@ -20,14 +20,14 @@ public class Player : Entity
     public float moveSpeed = 12f;
 
     [Header("Dash info")]
-    [SerializeField] private float dashCoolDown;
-    private float dashUsageTimer;
     public float dashSpeed;
     public float dashDuration;
     public float dashDir { get; private set; }
 
 
 
+
+    public SkillManager skill {  get; private set; }
 
 
 
@@ -75,6 +75,7 @@ public class Player : Entity
     {
         base.Start();
 
+        skill = SkillManager.instance;
 
         StateMachine.Initialize(idleState);
 
@@ -109,12 +110,12 @@ public class Player : Entity
         if (IsWallDetected())
             return;
 
-        dashUsageTimer -= Time.deltaTime;
 
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && dashUsageTimer < 0 )
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && SkillManager.instance.dash.CanUseSkill())
         {
-            dashUsageTimer = dashCoolDown;
+           
             dashDir = Input.GetAxisRaw("Horizontal");
 
             if (dashDir == 0)

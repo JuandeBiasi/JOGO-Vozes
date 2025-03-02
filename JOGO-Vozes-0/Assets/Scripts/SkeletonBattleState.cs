@@ -17,7 +17,7 @@ public class SkeletonBattleState : EnemyState
     {
         base.Enter();
 
-        player = GameObject.Find("Player").transform;
+        player = PlayerManager.instance.player.transform;
         Debug.Log("im IN BATTLE State");
     }
     public override void Update()
