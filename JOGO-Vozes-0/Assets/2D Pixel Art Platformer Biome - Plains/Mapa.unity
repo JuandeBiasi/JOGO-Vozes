@@ -2040,19 +2040,7 @@ Transform:
   m_GameObject: {fileID: 223452249}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  m_LocalPosition: {x: 294.32, y: 61.3, z: 0}
-=======
-  m_LocalPosition: {x: 500.31, y: 67.65, z: 0}
->>>>>>> Stashed changes
-=======
-  m_LocalPosition: {x: 500.31, y: 67.65, z: 0}
->>>>>>> Stashed changes
-=======
-  m_LocalPosition: {x: 500.31, y: 67.65, z: 0}
->>>>>>> Stashed changes
+  m_LocalPosition: {x: 499.8, y: 63.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2060,8 +2048,6 @@ Transform:
   - {fileID: 1359482494}
   - {fileID: 1535320686}
   - {fileID: 773641010}
-  - {fileID: 458062683}
-  - {fileID: 458062683}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &223452251
@@ -2094,8 +2080,6 @@ MonoBehaviour:
   counterAttackDuration: 0.2
   jumpForce: 12
   moveSpeed: 8
-  swordReturnImpact: 7
-  swordReturnImpact: 7
   dashSpeed: 25
   dashDuration: 0.4
 --- !u!70 &223452252
@@ -3988,19 +3972,7 @@ Transform:
   m_GameObject: {fileID: 372298906}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  m_LocalPosition: {x: 294.32, y: 61.3, z: -10}
-=======
-  m_LocalPosition: {x: 500.31, y: 67.65, z: -10}
->>>>>>> Stashed changes
-=======
-  m_LocalPosition: {x: 500.31, y: 67.65, z: -10}
->>>>>>> Stashed changes
-=======
-  m_LocalPosition: {x: 500.31, y: 67.65, z: -10}
->>>>>>> Stashed changes
+  m_LocalPosition: {x: 499.8, y: 63.2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -32080,19 +32052,7 @@ Transform:
   m_GameObject: {fileID: 1161068387}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  m_LocalPosition: {x: 294.32, y: 61.3, z: -10}
-=======
-  m_LocalPosition: {x: 500.31, y: 67.65, z: -10}
->>>>>>> Stashed changes
-=======
-  m_LocalPosition: {x: 500.31, y: 67.65, z: -10}
->>>>>>> Stashed changes
-=======
-  m_LocalPosition: {x: 500.31, y: 67.65, z: -10}
->>>>>>> Stashed changes
+  m_LocalPosition: {x: 499.8, y: 63.2, z: -10}
   m_LocalScale: {x: 25.149998, y: 7.1129327, z: 8.957649}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -60778,35 +60738,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sword
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0be1375502c19644f9b13f12327b0fe2, type: 3}
-<<<<<<< Updated upstream
-Updated upstream
-Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
---- !u!1001 &3125254086992277327
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 829225971709784008, guid: 71442fe0cfbbcb748b58afceba326111, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 497.85
-      objectReference: {fileID: 0}
-    - target: {fileID: 829225971709784008, guid: 71442fe0cfbbcb748b58afceba326111, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 63.53
-      objectReference: {fileID: 0}
-    - target: {fileID: 829225971709784008, guid: 71442fe0cfbbcb748b58afceba326111, type: 3}
-      propertyPath: m_LocalPosition.z
+    - target: {fileID: 8126879341177113525, guid: 0be1375502c19644f9b13f12327b0fe2, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 829225971709784008, guid: 71442fe0cfbbcb748b58afceba326111, type: 3}
@@ -61064,12 +60997,3 @@ SceneRoots:
   - {fileID: 1294006676}
 
   - {fileID: 7693667877637112417}
-  - {fileID: 3125254086992277327}
-<<<<<<< Updated upstream
- Updated upstream
- Stashed changes
-=======
-Stashed changes
-=======
->>>>>>> Stashed changes
-  - {fileID: 3125254086992277327}
