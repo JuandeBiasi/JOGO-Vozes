@@ -2061,6 +2061,7 @@ Transform:
   - {fileID: 1535320686}
   - {fileID: 773641010}
   - {fileID: 458062683}
+  - {fileID: 458062683}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &223452251
@@ -2093,6 +2094,7 @@ MonoBehaviour:
   counterAttackDuration: 0.2
   jumpForce: 12
   moveSpeed: 8
+  swordReturnImpact: 7
   swordReturnImpact: 7
   dashSpeed: 25
   dashDuration: 0.4
@@ -61070,3 +61072,4 @@ SceneRoots:
 Stashed changes
 =======
 >>>>>>> Stashed changes
+  - {fileID: 3125254086992277327}
