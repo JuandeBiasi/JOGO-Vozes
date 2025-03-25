@@ -14,13 +14,31 @@ namespace RPG.Dialogue.Editor
       public class DialogEditor : EditorWindow
       {
         Dialogue selectedDialogue = null;
+        [NonSerialized]
         GUIStyle nodeStyle;
+        [NonSerialized]
+        GUIStyle playerNodeStyle;
+        [NonSerialized]
         DialogNode draggingNode = null;
+        [NonSerialized]
         Vector2 draggingOffset;
+        [NonSerialized]
         DialogNode creatingNode = null;
-        
+        [NonSerialized]
+        DialogNode deletingNode = null;
+        [NonSerialized]
+        DialogNode linkingParentNode = null;
+        Vector2 scrollPositon;
+        [NonSerialized]
+        bool draggingCanvas = false;
+        [NonSerialized]
+        Vector2 draggingCanvasOffSet;
 
-            [MenuItem("Window/Dialogue Editor")]
+        const float canvasSize = 4000;
+        const float backgroundSize = 50;
+
+
+        [MenuItem("Window/Dialogue Editor")]
            public static void ShowEditorWindow()
            {
                 GetWindow(typeof(DialogEditor), false, "Dialog Editor");
@@ -47,6 +65,12 @@ namespace RPG.Dialogue.Editor
             nodeStyle.normal.textColor = Color.white;
             nodeStyle.padding = new RectOffset(20, 20 , 20 ,20);
             nodeStyle.border = new RectOffset (12,12, 12, 12);
+
+            playerNodeStyle = new GUIStyle();
+            playerNodeStyle.normal.background = EditorGUIUtility.Load("node1") as Texture2D;
+            playerNodeStyle.normal.textColor = Color.white;
+            playerNodeStyle.padding = new RectOffset(20, 20, 20, 20);
+            playerNodeStyle.border = new RectOffset(12, 12, 12, 12);
         }
 
         private void OnSelectionChanged()
@@ -69,6 +93,14 @@ namespace RPG.Dialogue.Editor
             else
             {
                 ProcessEvents();
+                scrollPositon = EditorGUILayout.BeginScrollView(scrollPositon);
+                
+
+               Rect canvas = GUILayoutUtility.GetRect(canvasSize, canvasSize);
+                Texture2D backgroundTex = Resources.Load("background") as Texture2D;
+                Rect textCoords = new Rect (0,0,canvasSize/backgroundSize, canvasSize / backgroundSize);
+                GUI.DrawTextureWithTexCoords(canvas, backgroundTex, textCoords);
+
                 foreach (DialogNode node in selectedDialogue.GetAllNodes())
                 {
                     
@@ -78,14 +110,20 @@ namespace RPG.Dialogue.Editor
                 foreach (DialogNode node in selectedDialogue.GetAllNodes())
                 {
                     DrawNode(node);
-                    
-
+                     
                 }
+                EditorGUILayout.EndScrollView();
                 if(creatingNode != null)
                 {
-                    Undo.RecordObject(selectedDialogue, "Added Dialogue Node");
+                    
                     selectedDialogue.CreateNode(creatingNode);
                     creatingNode = null;
+                }
+                if (deletingNode != null)
+                {
+                   
+                    selectedDialogue.DeleteNoDe(deletingNode);
+                    deletingNode = null;
                 }
             }
 
@@ -94,62 +132,122 @@ namespace RPG.Dialogue.Editor
 
         private void ProcessEvents()
         {
+            
             if (Event.current.type == EventType.MouseDown && draggingNode == null)
             {
-                draggingNode = GetNodeAtPoint(Event.current.mousePosition);
+                draggingNode = GetNodeAtPoint(Event.current.mousePosition + scrollPositon);
                 if(draggingNode != null)
                 {
-                    draggingOffset = draggingNode.rect.position - Event.current.mousePosition;
+                    draggingOffset = draggingNode.GetRect().position - Event.current.mousePosition;
+                    Selection.activeObject = draggingNode;
+                }
+                else
+                {
+                    draggingCanvas = true;
+                    draggingCanvasOffSet = (Event.current.mousePosition + scrollPositon);
+                    Selection.activeObject = selectedDialogue;
                 }
             }
             else if (Event.current.type == EventType.MouseDrag && draggingNode != null)
             {
-                Undo.RecordObject(selectedDialogue, "Move Dialogue Node");
-                draggingNode.rect.position = Event.current.mousePosition + draggingOffset ;
+                    
+                draggingNode.SetPosition( Event.current.mousePosition + draggingOffset) ;
 
                 GUI.changed = true;
             }
+            else if (Event.current.type == EventType.MouseDrag && draggingCanvas)
+            {
+                scrollPositon = draggingCanvasOffSet - Event.current.mousePosition;
+
+                GUI.changed = true;
+            }
+
             else if (Event.current.type == EventType.MouseUp && draggingNode != null)
             {
                 draggingNode = null;
                 
             }
-            EditorUtility.SetDirty(selectedDialogue);
+            else if (Event.current.type == EventType.MouseUp && draggingCanvas)
+            {
+                draggingCanvas = false;
+            }
+                
 
         }
 
         private void DrawNode(DialogNode node)
         {
-            GUILayout.BeginArea(node.rect, nodeStyle);
-            EditorGUI.BeginChangeCheck();
-
-           
-            string newText = EditorGUILayout.TextField(node.text);
+            GUIStyle style = nodeStyle;
+            if (node.IsPlayerSpeaking())
+            {
+                style = playerNodeStyle;
+            }
+            GUILayout.BeginArea(node.GetRect(), style);
             
 
-            if (EditorGUI.EndChangeCheck())
-            {
-                Undo.RecordObject(selectedDialogue, "Update Dialogue Text");
 
-                node.text = newText;
-                
+            node.SetText( EditorGUILayout.TextField(node.GetText()));
+
+
+            
+            GUILayout.BeginHorizontal();
+            if (GUILayout.Button("x"))
+            {
+                deletingNode = node;
             }
-           if (GUILayout.Button("+"))
+            DrawLinkButtons(node);
+
+            if (GUILayout.Button("+"))
             {
                 creatingNode = node;
-               
-
             }
-            
+            GUILayout.EndHorizontal();
+
             GUILayout.EndArea();
+        }
+
+        private void DrawLinkButtons(DialogNode node)
+        {
+            if (linkingParentNode == null)
+            {
+                if (GUILayout.Button("Link"))
+                {
+                    linkingParentNode = node;
+                }
+            }
+            else if (linkingParentNode == node  )
+            {
+                if (GUILayout.Button("cancel"))
+                {
+                    linkingParentNode = null;
+                }
+            }
+            else if (linkingParentNode.GetChildren().Contains(node.name))
+            {
+                if (GUILayout.Button("unlink"))
+                {
+                   
+                    linkingParentNode.RemoveChild(node.name);
+                    linkingParentNode = null;
+                }
+            }
+            else
+            {
+                if (GUILayout.Button("child"))
+                {
+                    Undo.RecordObject(this, "remove Dialogue link");
+                    linkingParentNode.AddChild(node.name);
+                    linkingParentNode = null;
+                }
+            }
         }
 
         private void DrawConnections(DialogNode node)
         {
             foreach (DialogNode childNode in selectedDialogue.GetAllChildren(node))
             {   
-                Vector3 startPosition = new Vector2 (node.rect.xMax, node.rect.center.y);
-                Vector3 endPosition = new Vector2 (childNode.rect.xMin, childNode.rect.center.y);
+                Vector3 startPosition = new Vector2 (node.GetRect().xMax, node.GetRect().center.y);
+                Vector3 endPosition = new Vector2 (childNode.GetRect().xMin, childNode.GetRect().center.y);
                 Vector3 controlPointOffset = endPosition - startPosition;
                 controlPointOffset.y = 0;
                 controlPointOffset.x *= 0.8f;
@@ -166,7 +264,7 @@ namespace RPG.Dialogue.Editor
             DialogNode foundNode = null;
             foreach(DialogNode node in selectedDialogue.GetAllNodes())
             {
-                if (node.rect.Contains(point))
+                if (node.GetRect().Contains(point))
                 {
                     foundNode = node;
                 }
