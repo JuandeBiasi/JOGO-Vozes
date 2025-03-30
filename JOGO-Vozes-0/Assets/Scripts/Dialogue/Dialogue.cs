@@ -84,7 +84,7 @@ namespace RPG.Dialogue
                 newNode.SetPosition(parent.GetRect().position + newNodeOffSet);
                 
 
-            }
+            }   
 
             return newNode;
         }
