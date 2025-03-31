@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 4db952f7-1b1b-4afc-aea1-e1ea60d5de94
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 0
-  text: maybe i am
+  text: i lived here my whole life
   children: []
   rect:
     serializedVersion: 2
@@ -354,7 +354,7 @@ MonoBehaviour:
   m_Name: 824964e7-ea1b-4b68-baab-bd7f0248d9fe
   m_EditorClassIdentifier: 
   isPlayerSpeaking: 1
-  text: im not
+  text: i love her
   children: []
   rect:
     serializedVersion: 2

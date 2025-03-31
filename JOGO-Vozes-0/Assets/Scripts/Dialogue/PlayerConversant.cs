@@ -29,10 +29,17 @@ namespace RPG.Dialogue
 
         }
 
+        public IEnumerable<string> GetChoices()
+        {
+            yield return "i lived here my whole life";
+            yield return "i love her";
+        }
+
         public void Next()
         {
            DialogNode[] children = currentDialogue.GetAllChildren(currentNode).ToArray();
-            currentNode =  children[0];
+            int randomIndex = Random.Range(0, children.Count());
+            currentNode =  children[randomIndex];
         }
 
 
