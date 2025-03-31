@@ -688,8 +688,8 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Vozes perdidas  O Eco da Chama
-  metroPackageVersion: 
+  metroPackageName: VozesperdidasOEcodaChama
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -697,7 +697,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Vozes perdidas  O Eco da Chama
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: Vozes perdidas  O Eco da Chama
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0

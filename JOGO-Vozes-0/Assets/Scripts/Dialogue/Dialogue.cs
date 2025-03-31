@@ -13,31 +13,31 @@ namespace RPG.Dialogue
         [SerializeField]
         List<DialogNode> nodes = new List<DialogNode>();
         [SerializeField]
-        Vector2 newNodeOffSet = new Vector2 (250, 0);
+        Vector2 newNodeOffSet = new Vector2(250, 0);
 
 
 
         Dictionary<string, DialogNode> nodeLookUP = new Dictionary<string, DialogNode>();
-     
+
         private void Awake()
         {
-            
-            
+
+
             OnValidate();
         }
 
         private void OnValidate()
         {
-            
+
             nodeLookUP.Clear();
             foreach (DialogNode node in GetAllNodes())
             {
                 nodeLookUP[node.name] = node;
-                
+
             }
-           
+
         }
-       
+
         public IEnumerable<DialogNode> GetAllNodes()
         {
             return nodes;
@@ -47,20 +47,40 @@ namespace RPG.Dialogue
         {
             return nodes[0];
         }
-
+        public IEnumerable<DialogNode> GetPlayerChildren(DialogNode currentNode)
+        {
+            foreach (DialogNode node in GetAllChildren(currentNode))
+            {
+                if (node.IsPlayerSpeaking())
+                {
+                    yield return node;
+                }
+            }
+        }
+        public IEnumerable<DialogNode> GetAIChildren(DialogNode currentNode)
+        {
+            foreach (DialogNode node in GetAllChildren(currentNode))
+            {
+                if (!node.IsPlayerSpeaking())
+                {
+                    yield return node;
+                }
+            }
+        }
 
         public IEnumerable<DialogNode> GetAllChildren(DialogNode parentNode)
         {
-           
+
             foreach (string childID in parentNode.GetChildren())
-            {        
-               if (nodeLookUP.ContainsKey(childID))
-               {
-                 yield return (nodeLookUP[childID]);
-               }
+            {
+                if (nodeLookUP.ContainsKey(childID))
+                {
+                    yield return (nodeLookUP[childID]);
+                }
             }
-           
+
         }
+
 #if UNITY_EDITOR
 
         public void CreateNode(DialogNode parent)
@@ -71,20 +91,20 @@ namespace RPG.Dialogue
             AddNode(newNode);
         }
 
-       
 
-        private  DialogNode MakeNode(DialogNode parent)
+
+        private DialogNode MakeNode(DialogNode parent)
         {
             DialogNode newNode = CreateInstance<DialogNode>();
             newNode.name = Guid.NewGuid().ToString();
             if (parent != null)
             {
                 parent.AddChild(newNode.name);
-                    newNode.SetPlayerSpeaking(!parent.IsPlayerSpeaking());  
+                newNode.SetPlayerSpeaking(!parent.IsPlayerSpeaking());
                 newNode.SetPosition(parent.GetRect().position + newNodeOffSet);
-                
 
-            }   
+
+            }
 
             return newNode;
         }
@@ -117,15 +137,15 @@ namespace RPG.Dialogue
             if (nodes.Count == 0)
             {
                 DialogNode newNode = MakeNode(null);
-               
+
                 AddNode(newNode);
             }
             if (AssetDatabase.GetAssetPath(this) != "")
             {
-                foreach(DialogNode node in GetAllNodes())
+                foreach (DialogNode node in GetAllNodes())
                 {
-                    if (AssetDatabase.GetAssetPath(node) == "") 
-                     {
+                    if (AssetDatabase.GetAssetPath(node) == "")
+                    {
                         AssetDatabase.AddObjectToAsset(node, this);
 
                     }
@@ -136,7 +156,8 @@ namespace RPG.Dialogue
 
         public void OnAfterDeserialize()
         {
-  
+
         }
+
+    }  
     }
-}
