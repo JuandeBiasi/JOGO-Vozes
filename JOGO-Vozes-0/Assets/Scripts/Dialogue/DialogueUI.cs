@@ -16,6 +16,7 @@ namespace RPG.UI
         [SerializeField] Transform choiceRoot;
         [SerializeField] GameObject choicesPrefab;
         [SerializeField] Button quitButton;
+        [SerializeField] TextMeshProUGUI conversantName;
 
         // Start is called before the first frame update
         void Start()
