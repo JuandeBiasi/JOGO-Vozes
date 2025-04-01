@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class CharacterStats : MonoBehaviour
 {
@@ -14,13 +15,17 @@ public class CharacterStats : MonoBehaviour
     public Stat evasion;
 
     public Stat damage;
-    
 
-    [SerializeField]private int currentHealth;
+    [SerializeField] private int currentHealth;
+
+    public event Action<int, int> OnHealthChanged; // current, max
+    public event Action<int> OnDamageTaken; // damage amount
+    public event Action OnDied;
 
     protected virtual void Start()
     {
         currentHealth = maxHealth.GetValue();
+        OnHealthChanged?.Invoke(currentHealth, maxHealth.GetValue());
     }
 
     public virtual void DoDamage(CharacterStats _targetStats)
@@ -28,8 +33,7 @@ public class CharacterStats : MonoBehaviour
         if (CanAvoidAttack(_targetStats))
             return;
 
-        int totalDamage = damage.GetValue() + strength.GetValue();
-
+        var totalDamage = damage.GetValue() + strength.GetValue();
         totalDamage = CheckTargetArmor(_targetStats, totalDamage);
         _targetStats.TakeDamage(totalDamage);
     }
@@ -37,33 +41,29 @@ public class CharacterStats : MonoBehaviour
     private static int CheckTargetArmor(CharacterStats _targetStats, int totalDamage)
     {
         totalDamage -= _targetStats.armor.GetValue();
-        totalDamage = Mathf.Clamp(totalDamage, 0, int.MaxValue);
-        return totalDamage;
+        return Mathf.Clamp(totalDamage, 0, int.MaxValue);
     }
 
     public virtual void TakeDamage(int _damage)
     {
         currentHealth -= _damage;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth.GetValue());
 
+        OnDamageTaken?.Invoke(_damage);
+        OnHealthChanged?.Invoke(currentHealth, maxHealth.GetValue());
 
-
-        if (currentHealth < 0)
+        if (currentHealth <= 0)
             Die();
-
     }
 
     protected virtual void Die()
     {
-        
+        OnDied?.Invoke();
     }
+
     private bool CanAvoidAttack(CharacterStats _targetStats)
     {
-        int totalEvasion = _targetStats.evasion.GetValue() + _targetStats.agility.GetValue();
-
-        if (Random.Range(0, 100) < totalEvasion)
-        {
-           return true;
-        }
-        return false;
+        var totalEvasion = _targetStats.evasion.GetValue() + _targetStats.agility.GetValue();
+        return UnityEngine.Random.Range(0, 100) < totalEvasion;
     }
 }
