@@ -13,16 +13,18 @@ namespace RPG.Dialogue
         
          Dialogue currentDialogue;
         DialogNode currentNode = null;
+        DialogueActivator currentConversant = null;
         bool isChoosing = false;
 
         public event Action onConversationUpdated;
        
       
-        public void StartDialogue(Dialogue newDialogue)
+        public void StartDialogue(DialogueActivator newConversant ,Dialogue newDialogue)
         {
-           
+            currentConversant = newConversant;
             currentDialogue = newDialogue;
             currentNode = currentDialogue.GetRootNode();
+            
             onConversationUpdated?.Invoke();
         }
         public void Quit()
@@ -31,6 +33,7 @@ namespace RPG.Dialogue
             currentNode = null;
             isChoosing=false;
             onConversationUpdated();
+            currentConversant =null;
         }
         public bool IsActive()
         {
@@ -93,6 +96,10 @@ namespace RPG.Dialogue
             if (isChoosing)
             {
                 return playerName;
+            }
+            else
+            {
+                return currentConversant.GetName();
             }
         }
     }

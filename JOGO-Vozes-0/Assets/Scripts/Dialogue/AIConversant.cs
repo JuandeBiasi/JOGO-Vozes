@@ -7,7 +7,8 @@ public class AIConversant : MonoBehaviour
 {
     
     PlayerConversant playerConversant;
-    [SerializeField] Dialogue dialogue;
+    [SerializeField] Dialogue dialogue = null;
+    
 
     private bool canActivate;//simple bool to determine if the dialogue box can be activated
     public bool isPerson = true;
@@ -20,7 +21,7 @@ public class AIConversant : MonoBehaviour
         //if the bool is true AND the button is pressed then call the dialogue box
         if (canActivate && Input.GetButtonDown("E"))
         {
-           // Playercontroller.GetComponent<PlayerConversant>().StartDialogue(dialogue);
+            //Playercontroller.GetComponent<PlayerConversant>().StartDialogue(dialogue);
         }
     }
     //allows dialogue to be activated
@@ -40,5 +41,5 @@ public class AIConversant : MonoBehaviour
         }
     }
 
-
+   
 }

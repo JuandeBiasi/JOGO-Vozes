@@ -6,9 +6,10 @@ using RPG.UI;
 
 public class DialogueActivator : MonoBehaviour
 {
+    [SerializeField] string conversantName;
     PlayerConversant playerConversant;
     [SerializeField] private GameObject dialogueButton; // Referência ao botão no Canvas
-    [SerializeField] private Dialogue dialogue;
+    [SerializeField] private Dialogue dialogue= null;
     private bool canActivate;
 
     private void Start()
@@ -57,7 +58,7 @@ public class DialogueActivator : MonoBehaviour
             canActivate = false;
             if (playerConversant != null)
             {
-                playerConversant.StartDialogue(dialogue);
+                playerConversant.StartDialogue(this.GetComponent<DialogueActivator>(), dialogue);
                 if (dialogueButton != null)
                 {
                     dialogueButton.SetActive(false); // Esconde o botão ao iniciar o diálogo
@@ -65,4 +66,10 @@ public class DialogueActivator : MonoBehaviour
             }
         }
     }
+    public string GetName()
+    {
+        return conversantName;
+    }
+
+
 }

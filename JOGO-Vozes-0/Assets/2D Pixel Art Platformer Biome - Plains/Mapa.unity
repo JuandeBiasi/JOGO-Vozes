@@ -2228,6 +2228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59520ef440f4c9e49b9ce48f01f09f1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerName: Rupert
 --- !u!1 &227598724
 GameObject:
   m_ObjectHideFlags: 0
@@ -59611,6 +59612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c20f14183720d6a4c88210d9e6e7fc0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  conversantName: Rubia
   dialogueButton: {fileID: 1371327719}
   dialogue: {fileID: 11400000, guid: ec709a00223ec7e40a0371689f07d288, type: 2}
 --- !u!61 &1832206280
@@ -61407,7 +61409,7 @@ MonoBehaviour:
   choiceRoot: {fileID: 528903818}
   choicesPrefab: {fileID: 8284207334070940707, guid: 1cfb2c28c2567de4d909fe85ae4bf146, type: 3}
   quitButton: {fileID: 1971109750}
-  conversantName: {fileID: 0}
+  conversantName: {fileID: 1508457716}
 --- !u!1 &2024280783
 GameObject:
   m_ObjectHideFlags: 0
