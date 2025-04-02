@@ -2,12 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 namespace RPG.Dialogue
 {
     public class PlayerConversant : MonoBehaviour
     {
+        [SerializeField] string playerName;
         
          Dialogue currentDialogue;
         DialogNode currentNode = null;
@@ -86,5 +88,12 @@ namespace RPG.Dialogue
             
         }
 
+        public string GetCurrentConversantName()
+        {
+            if (isChoosing)
+            {
+                return playerName;
+            }
+        }
     }
 }
