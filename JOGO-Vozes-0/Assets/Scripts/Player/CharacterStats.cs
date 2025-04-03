@@ -66,4 +66,11 @@ public class CharacterStats : MonoBehaviour
         var totalEvasion = _targetStats.evasion.GetValue() + _targetStats.agility.GetValue();
         return UnityEngine.Random.Range(0, 100) < totalEvasion;
     }
+
+    protected void RecoverHealth(int foodHealthRestored)
+    {
+        foodHealthRestored = Mathf.Max(foodHealthRestored, 20);
+        currentHealth = Mathf.Min(currentHealth + foodHealthRestored, maxHealth.GetValue());
+        OnHealthChanged?.Invoke(currentHealth, maxHealth.GetValue());
+    }
 }

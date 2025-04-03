@@ -30,4 +30,12 @@ public class PlayerStats : CharacterStats
 
        player.Die();
     }
+    
+    public void ConsumeItem(Item item)
+    {
+        if (item is not FoodItem food) return;
+        
+        Debug.Log($"[PlayerStats] Comeu {food.itemName}, recuperou {food.healthRestored} de vida.");
+        base.RecoverHealth(food.healthRestored);
+    }
 }

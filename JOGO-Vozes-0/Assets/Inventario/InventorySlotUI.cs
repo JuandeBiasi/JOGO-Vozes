@@ -1,26 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class InventorySlotUI : MonoBehaviour
+public class InventorySlotUI : MonoBehaviour, IPointerClickHandler
 {
-    // Referência ao componente Image que exibirá o ícone do item.
     public Image icon;
+    private Item currentItem;
 
-    // Método para atualizar o slot com um item
     public void SetItem(Item newItem)
     {
-        if (newItem != null && newItem.itemIcon != null)
+        currentItem = newItem;
+
+        if (currentItem != null && currentItem.itemIcon != null)
         {
-            icon.sprite = newItem.itemIcon;
-            icon.enabled = true; // Ativa a imagem
+            icon.sprite = currentItem.itemIcon;
+            icon.enabled = true;
         }
         else
         {
-            // Se não houver item, limpa o slot
             icon.sprite = null;
             icon.enabled = false;
         }
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (currentItem == null) return;
+        InventoryManager.Instance.UseItem(currentItem);
+
+        var uiController = FindObjectOfType<InventoryUIController>();
+        uiController?.UpdateUI();
     }
 }
