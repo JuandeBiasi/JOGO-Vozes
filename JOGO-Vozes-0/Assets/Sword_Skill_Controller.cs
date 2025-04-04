@@ -135,11 +135,11 @@ public class Sword_Skill_Controller : MonoBehaviour
 
                     foreach (var hit in colliders)
                     {
-                        if (hit.GetComponent<Enemy>() != null)
-                            hit.GetComponent<Enemy>().DamageEffect();
+                        var enemy = hit.GetComponent<Enemy>();
+                        if (enemy != null)
+                            player.stats.DoDamage(enemy.GetComponent<EnemyStats>());
                     }
                 }
-
             }
         }
     }
