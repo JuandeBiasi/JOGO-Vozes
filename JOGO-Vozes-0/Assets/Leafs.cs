@@ -12,9 +12,11 @@ public class LeafFallTrigger : MonoBehaviour
 
     private readonly List<Transform> _leaves = new();
     private bool _hasTriggered = false;
+    private AudioSource _audioSource;
 
     private void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
         foreach (Transform child in transform)
         {
             if (child.GetComponent<SpriteRenderer>() != null)
@@ -32,6 +34,7 @@ public class LeafFallTrigger : MonoBehaviour
 
         if (hit == null || hit.transform != transform) return;
         _hasTriggered = true;
+        _audioSource.Play();
         foreach (var leaf in _leaves.Where(leaf => leaf != null))
         {
             TriggerLeafFall(leaf);

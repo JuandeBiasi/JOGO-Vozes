@@ -11,11 +11,17 @@ namespace Puzzles
         [SerializeField] private CrystalSlot[] slots;
         [SerializeField] private FigureType[] correctCombination;
         [SerializeField] private UnityEvent onPuzzleSolved;
-        [SerializeField] private AudioSource audioSourceSolved;
-        [SerializeField] private AudioSource audioSourceChanged;
+        [SerializeField] private AudioClip audioSourceSolved;
+        [SerializeField] private AudioClip audioSourceChanged;
         
         private bool _puzzleSolved;
         private Debouncer _debouncer;
+        private AudioSource _audioSource;
+
+        private void Start()
+        {
+            _audioSource = GetComponent<AudioSource>();
+        }
 
         private void OnEnable()
         {
@@ -42,6 +48,7 @@ namespace Puzzles
         private void OnCrystalChanged()
         {
             if (_puzzleSolved) return;
+            _audioSource.PlayOneShot(audioSourceChanged);
             _debouncer.Trigger(CheckCombination);
         }
 
@@ -60,6 +67,7 @@ namespace Puzzles
                 crystalSlot.Solve();
             }
             onPuzzleSolved?.Invoke();
+            _audioSource.PlayOneShot(audioSourceSolved);
         }
     }
 

@@ -34,7 +34,7 @@ public class PlayerPrimaryAttackState : PlayerState
             attackDir = xInput;
 
        
-
+        player.PlaySwordSound();
         player.SetVelocity(player.attackMovement[comboCounter].x * attackDir, player.attackMovement[comboCounter].y);
 
         stateTimer = .1f;

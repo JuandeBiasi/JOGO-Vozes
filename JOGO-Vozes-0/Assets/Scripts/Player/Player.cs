@@ -10,7 +10,8 @@ public class Player : Entity
     [Header("attack details")]
     public Vector2[] attackMovement;
     public float counterAttackDuration = .2f;
-   
+    [SerializeField] private AudioClip swordSound;
+
 
 
     public bool isBusy { get; private set; }
@@ -29,17 +30,8 @@ public class Player : Entity
 
     public SkillManager skill {  get; private set; }
     public GameObject sword {  get; private set; }
-
-
-
-
-   
-
-
-   
-   
-   
-
+    
+    private AudioSource _audioSource;
 
     #region States
     public PlayerStateMachine StateMachine { get; private set; }
@@ -85,6 +77,7 @@ public class Player : Entity
     protected override void Start()
     {
         base.Start();
+        _audioSource = GetComponent<AudioSource>();
 
         skill = SkillManager.instance;
 
@@ -148,6 +141,10 @@ public class Player : Entity
     }
 
 
+    public void PlaySwordSound()
+    {
+        _audioSource.PlayOneShot(swordSound);
+    }
 
     public override void Die()
     {
