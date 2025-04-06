@@ -29,7 +29,6 @@ public class SkeletonMoveState : SkeletonGroundState
         if (!isWallDetected || !isGroundDetected) return;
         enemy.Flip();
         stateMachine.ChangeState(enemy.idleState);
-
     }
 }
     

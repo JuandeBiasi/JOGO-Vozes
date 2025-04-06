@@ -74,7 +74,11 @@ public class Enemy : Entity
 
     public virtual void AnimationFinishTrigger() => stateMachine.currentState.AnimationFinishTrigger();
     public virtual RaycastHit2D IsPlayerDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, playerCheckDistance, whatIsPlayer);
-
+    public new virtual bool IsWallDetected()
+    {
+        return Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround) ||
+        Physics2D.Raycast(new Vector2(wallCheck.position.x, wallCheck.position.y + 2), Vector2.right * facingDir, wallCheckDistance, whatIsGround);
+    }
 
     protected override void OnDrawGizmos()
     {

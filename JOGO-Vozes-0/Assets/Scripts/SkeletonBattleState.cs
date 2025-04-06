@@ -40,9 +40,9 @@ public class SkeletonBattleState : EnemyState
                 stateMachine.ChangeState(enemy.idleState);
         }
 
-        if (player.position.x > enemy.transform.position.x)
+        if (player.position.x > enemy.transform.position.x + 0.5)
             moveDir = 1;
-        else if (player.position.x<enemy.transform.position.x)
+        else if (player.position.x < enemy.transform.position.x - 0.5)
             moveDir = -1;
 
         enemy.SetVelocity(enemy.moveSpeed * moveDir,rb.velocity.y);
