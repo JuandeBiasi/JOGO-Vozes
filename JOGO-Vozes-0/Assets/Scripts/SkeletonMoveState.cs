@@ -24,12 +24,12 @@ public class SkeletonMoveState : SkeletonGroundState
 
         enemy.SetVelocity( enemy.moveSpeed * enemy.facingDir ,rb.velocity.y );
 
-        if(enemy.IsWallDetected() || !enemy.isGroundDetected() )
-        {
-            enemy.Flip();
-            stateMachine.ChangeState(enemy.idleState);
-        }
-        
+        var isWallDetected = enemy.IsWallDetected();
+        var isGroundDetected = enemy.isGroundDetected();
+        if (!isWallDetected || !isGroundDetected) return;
+        enemy.Flip();
+        stateMachine.ChangeState(enemy.idleState);
+
     }
 }
     
