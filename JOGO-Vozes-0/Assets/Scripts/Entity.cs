@@ -107,7 +107,7 @@ public class Entity : MonoBehaviour
    protected virtual void OnDrawGizmos()
     {
         Gizmos.DrawLine(grounCheck.position, new Vector3(grounCheck.position.x, grounCheck.position.y - groundCheckDistance));
-        Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + wallCheckDistance, wallCheck.position.y));
+        Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + wallCheckDistance * facingDir, wallCheck.position.y));
         Gizmos.DrawWireSphere(attackCheck.position, attackCheckRadius);
     }
 

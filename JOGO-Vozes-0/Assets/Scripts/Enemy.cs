@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : Entity
 {
     [SerializeField] protected LayerMask whatIsPlayer;
+    [SerializeField] protected float playerCheckDistance = 5;
 
     [Header("Stunned Info")]
     public float stunDuration;
@@ -72,8 +73,12 @@ public class Enemy : Entity
     }
 
     public virtual void AnimationFinishTrigger() => stateMachine.currentState.AnimationFinishTrigger();
-    public virtual RaycastHit2D IsPlayerDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, 50, whatIsPlayer);
-
+    public virtual RaycastHit2D IsPlayerDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, playerCheckDistance, whatIsPlayer);
+    public new virtual bool IsWallDetected()
+    {
+        return Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround) ||
+        Physics2D.Raycast(new Vector2(wallCheck.position.x, wallCheck.position.y + 2), Vector2.right * facingDir, wallCheckDistance, whatIsGround);
+    }
 
     protected override void OnDrawGizmos()
     {
@@ -81,8 +86,6 @@ public class Enemy : Entity
         Gizmos.color = Color.yellow;
         Gizmos.DrawLine(transform.position, new Vector3(transform.position.x + attackDistance * facingDir, transform.position.y));
     }
-
-   
 }
 
 
