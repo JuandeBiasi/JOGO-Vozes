@@ -3502,6 +3502,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5b0477c90f18fb48b640b5f6501d959, type: 3}
+--- !u!114 &233935019 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 319590349263372335, guid: c5b0477c90f18fb48b640b5f6501d959, type: 3}
+  m_PrefabInstance: {fileID: 233935018}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 281a9841844fbf142a9ee35ca2b49209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &254510729
 GameObject:
   m_ObjectHideFlags: 0
@@ -7946,7 +7957,7 @@ MonoBehaviour:
   player: {fileID: 223452251}
   tilemap: {fileID: 1457939859}
   virtualCamera: {fileID: 372298907}
-  enemySkeleton: {fileID: 618585590}
+  enemySkeleton: {fileID: 233935019}
 --- !u!61 &611081290
 BoxCollider2D:
   m_ObjectHideFlags: 0
