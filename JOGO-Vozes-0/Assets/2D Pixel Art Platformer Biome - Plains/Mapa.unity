@@ -3503,10 +3503,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
-    - target: {fileID: 2921381321570407443, guid: c5b0477c90f18fb48b640b5f6501d959, type: 3}
-      propertyPath: maxHealth.baseValue
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 7722114880925646687, guid: c5b0477c90f18fb48b640b5f6501d959, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.57
