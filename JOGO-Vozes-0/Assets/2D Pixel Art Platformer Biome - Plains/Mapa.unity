@@ -8412,7 +8412,7 @@ GameObject:
   - component: {fileID: 628165166}
   - component: {fileID: 628165165}
   - component: {fileID: 628165164}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lyra
   m_TagString: Untagged
   m_Icon: {fileID: 0}
