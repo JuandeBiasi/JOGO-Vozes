@@ -62,7 +62,7 @@ public class CSE_Wander : MonoBehaviour
         void stateChange()
     {
         isWalking = !isWalking;
-        anim.SetBool("isWalkin", isWalking? true:false);
+        anim.SetBool("isWalking", isWalking? true:false);
         randomTime = isWalking ? Random.Range(minWalkTime,maxWalkTime) : Random.Range(minPauseTime, maxPauseTime);
         timer = 0;
     }

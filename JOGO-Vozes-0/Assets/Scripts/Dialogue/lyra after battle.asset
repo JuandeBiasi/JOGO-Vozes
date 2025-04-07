@@ -1,0 +1,157 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9211607664139014371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34bf99a3ef2577143a2afe142947baa9, type: 3}
+  m_Name: 45c65cb1-e447-4a84-bff0-27dc8cdd110f
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: " Eu conhe\xE7o esse monstro\u2026 Ele era um guardi\xE3o da floresta, antes
+    da corrup\xE7\xE3o tom\xE1-lo. Voc\xEAs... lutam contra isso?"
+  children:
+  - 2f0fb2be-ebb6-4545-a419-e4f96c6dffa0
+  rect:
+    serializedVersion: 2
+    x: 540
+    y: 132
+    width: 200
+    height: 100
+--- !u!114 &-8078129012181028367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34bf99a3ef2577143a2afe142947baa9, type: 3}
+  m_Name: 2f0fb2be-ebb6-4545-a419-e4f96c6dffa0
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Estamos buscando respostas. E talvez um modo de restaurar o que foi perdido.
+  children:
+  - 92a05ad2-628c-47de-8be5-02d9221c2ecd
+  rect:
+    serializedVersion: 2
+    x: 790
+    y: 132
+    width: 200
+    height: 100
+--- !u!114 &-1929791467722827356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34bf99a3ef2577143a2afe142947baa9, type: 3}
+  m_Name: 5cf6b1a7-3ad1-428e-9f86-62861c9adf71
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: "Quem s\xE3o voc\xEAs? Por que me ajudaram?"
+  children:
+  - 1c5ace91-dd74-4aa0-94bd-d1294ca8c0ff
+  rect:
+    serializedVersion: 2
+    x: 40
+    y: 132
+    width: 200
+    height: 100
+--- !u!114 &-1661018533280265215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34bf99a3ef2577143a2afe142947baa9, type: 3}
+  m_Name: 92a05ad2-628c-47de-8be5-02d9221c2ecd
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: "Se est\xE3o indo para a biblioteca\u2026 deixem-me ir com voc\xEAs. Tenho
+    perguntas tamb\xE9m. E talvez... algumas respostas."
+  children:
+  - 737b4d4b-e054-4494-b0eb-06ff74bfe6ab
+  rect:
+    serializedVersion: 2
+    x: 1040
+    y: 131
+    width: 200
+    height: 100
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f72c1b0215e5048a135ee78f222058, type: 3}
+  m_Name: lyra after battle
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -1929791467722827356}
+  - {fileID: 8282110650506347943}
+  - {fileID: -9211607664139014371}
+  - {fileID: -8078129012181028367}
+  - {fileID: -1661018533280265215}
+  - {fileID: 1665776141726413522}
+  newNodeOffSet: {x: 250, y: 0}
+--- !u!114 &1665776141726413522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34bf99a3ef2577143a2afe142947baa9, type: 3}
+  m_Name: 737b4d4b-e054-4494-b0eb-06ff74bfe6ab
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: "SAPO (sorrindo torto):  \u2014 \xD3timo. Agora temos uma guardia da floresta
+    a bordo. Falta s\xF3 um cozinheiro. O grupo segue junto, e a n\xE9voa parece
+    abrir passagem conforme se afastam."
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1290
+    y: 132
+    width: 200
+    height: 100
+--- !u!114 &8282110650506347943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34bf99a3ef2577143a2afe142947baa9, type: 3}
+  m_Name: 1c5ace91-dd74-4aa0-94bd-d1294ca8c0ff
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: "N\xE3o pod\xEDamos ignorar. Ningu\xE9m merece enfrentar isso sozinho."
+  children:
+  - 45c65cb1-e447-4a84-bff0-27dc8cdd110f
+  rect:
+    serializedVersion: 2
+    x: 290
+    y: 132
+    width: 200
+    height: 100

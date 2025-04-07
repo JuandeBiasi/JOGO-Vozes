@@ -5,8 +5,7 @@ using UnityEngine;
 public class Enemy_Skeleton : Enemy
 {
     public GameObject foodPrefab;
-
-
+    [SerializeField] public bool isBoss = false;
     #region States
     public SkeletonIdleState idleState { get; private set; }
     public SkeletonMoveState moveState { get; private set; }
@@ -14,6 +13,7 @@ public class Enemy_Skeleton : Enemy
     public SkeletonAttackState attackState { get; private set; }
     public SkeletonStunnedState stunnedState { get; private set; }
     public SkeletonDeadState deadState { get; private set; }
+    public SkeletonAttack2State attack2State { get; private set; }
     #endregion  
 
     protected override void Awake()
@@ -25,6 +25,7 @@ public class Enemy_Skeleton : Enemy
         moveState = new SkeletonMoveState(this, stateMachine, "Move", this);
         battleState = new SkeletonBattleState(this, stateMachine, "Move", this);
         attackState = new SkeletonAttackState(this, stateMachine, "Attack", this);
+        attack2State = new SkeletonAttack2State(this, stateMachine, "Attack2", this);
         stunnedState = new SkeletonStunnedState(this, stateMachine, "Stunned", this);
         deadState = new SkeletonDeadState(this, stateMachine, "Idle",this);
       
