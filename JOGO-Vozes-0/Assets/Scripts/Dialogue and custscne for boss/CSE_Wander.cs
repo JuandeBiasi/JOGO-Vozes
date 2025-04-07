@@ -1,8 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Data;
-using System.Threading;
-using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class CSE_Wander : MonoBehaviour
