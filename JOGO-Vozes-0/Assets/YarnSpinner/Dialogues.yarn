@@ -13,6 +13,25 @@ SAPO: Quanto mais sabemos, mais longe estamos do paraíso.
 PRÍNCIPE: Me mostre o caminho.
 
 SAPO: Para prosseguir… você deve me mostrar que sua mente está tão bem treinada quanto o seu corpo.
-SAPO: Complete o desafio das cores.
+SAPO: Complete o desafio dos cristais.
 SAPO: Eu vou te esperar logo à frente.
+===
+
+title: Dialog2
+---
+SAPO: A plataforma só responde à combinação correta de cristais. Sem ela, você não vai a lugar algum.
+
+JOGADOR: E onde encontro essa combinação?
+
+SAPO: Você passou pelas ruínas do velho castelo antes de chegar aqui, os ecos do passado ainda sussurram a resposta por lá.
+SAPO: Mas esteja atento… nem tudo será revelado de uma vez.
+===
+
+title: Dialog3
+---
+JOGADOR: Voltei às ruínas. Encontrei parte dos cristais, mas o último estava faltando...
+
+SAPO: Então você viu...
+SAPO: O último cristal é o Vermelho. O mais instável de todos. Por isso não foi deixado nas ruínas.
+SAPO: Agora você tem tudo o que precisa!
 ===

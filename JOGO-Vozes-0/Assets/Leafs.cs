@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
+using UnityEngine.Events;
 
 public class LeafFallTrigger : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class LeafFallTrigger : MonoBehaviour
     [SerializeField] private float fadeDuration = 1f;
     [SerializeField] private float fallDistance = 3f;
     [SerializeField] private Ease fallEase = Ease.OutQuad;
+    [SerializeField] private UnityEvent onFall;
 
     private readonly List<Transform> _leaves = new();
     private bool _hasTriggered = false;
@@ -55,5 +57,6 @@ public class LeafFallTrigger : MonoBehaviour
         sr.DOFade(0, fadeDuration).SetDelay(fallDuration - fadeDuration);
 
         Destroy(leaf.gameObject, fallDuration + 0.2f);
+        onFall?.Invoke();
     }
 }
