@@ -2,7 +2,7 @@
 tags:
 ---
 SAPO: Agora que você já terminou o seu treino básico, está na hora de saber a verdade por trás da sua família… e de todo o reino.
-PRÍNCIPE: (encara o sapo com firmeza)
+PRÍNCIPE: *encara o sapo com firmeza*
     -> Seja o que for, eu quero saber a verdade. Sem mais segredos.
     -> Eu tenho um pressentimento de que não vou gostar…
 
@@ -35,3 +35,31 @@ SAPO: Então você viu...
 SAPO: O último cristal é o Vermelho. O mais instável de todos. Por isso não foi deixado nas ruínas.
 SAPO: Agora você tem tudo o que precisa!
 ===
+
+title: Dialog4
+---
+PRÍNCIPE: Não podemos deixá-la assim…
+
+SAPO: (resmungando) Isso vai nos atrasar...
+===
+
+title: Dialog5
+---
+LYRA: Quem são vocês? Por que me ajudaram?
+
+PRÍNCIPE: (ofegante, mas gentil) Não podíamos ignorar. Ninguém merece enfrentar isso sozinho.
+
+SAPO: (limpando sangue da perna)
+
+LYRA: Eu conheço esse monstro… Ele era um guardião da floresta, antes da corrupção tomá-lo. Vocês... lutam contra isso?
+
+PRÍNCIPE: Estamos buscando respostas. E talvez um modo de restaurar o que foi perdido.
+
+LYRA: (Olha para o chão, pensativa. Pela primeira vez, hesita menos. Se levanta, encara os dois)
+
+LYRA: Se estão indo para a biblioteca… deixem-me ir com vocês. Tenho perguntas também. E talvez... algumas respostas.
+
+SAPO: (sorrindo torto) Ótimo. Agora temos uma guardiã da floresta a bordo. Falta só um cozinheiro.
+===
+
+

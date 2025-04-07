@@ -6,7 +6,7 @@ using Yarn.Unity;
 public class DialogueTrigger : MonoBehaviour
 {
     [SerializeField] private DialogueRunner dialogueRunner;
-    [SerializeField] private string dialogueNode = "PudgyCat";
+    [SerializeField] private string dialogueNode;
 
     private SpriteRenderer _spriteRenderer;
     private bool _hasTriggered;
@@ -21,6 +21,7 @@ public class DialogueTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (_hasTriggered) return;
+        if (!other.CompareTag("Player")) return;
         
         _spriteRenderer.enabled = true;
         dialogueRunner.StartDialogue(dialogueNode);
@@ -29,6 +30,8 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
+        if (!other.CompareTag("Player")) return;
+
         _hasTriggered = false;
         _spriteRenderer.enabled = false;
         dialogueRunner.Stop();

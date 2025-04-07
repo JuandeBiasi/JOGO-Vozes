@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Player : Entity
 {
-    
+    public bool inputFrozen = false;
     [Header("attack details")]
     public Vector2[] attackMovement;
     public float counterAttackDuration = .2f;
@@ -88,7 +88,8 @@ public class Player : Entity
     protected override void Update()
     {
         base.Update();
-
+        
+        if (inputFrozen) StateMachine.ChangeState(idleState);
         StateMachine.currentState.update();
 
         CheckforDashintput();

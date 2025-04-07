@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 public class Enemy_Skeleton : Enemy
 {
     public GameObject foodPrefab;
     [SerializeField] public bool isBoss = false;
+    [SerializeField] private DialogueRunner _dialogueRunner;
     #region States
     public SkeletonIdleState idleState { get; private set; }
     public SkeletonMoveState moveState { get; private set; }
@@ -43,6 +45,7 @@ public class Enemy_Skeleton : Enemy
     protected override void Update()
     {
         base.Update();
+        if (_dialogueRunner?.IsDialogueRunning == true) stateMachine.ChangeState(idleState);
 
         if(Input.GetKeyDown(KeyCode.U))
         {
