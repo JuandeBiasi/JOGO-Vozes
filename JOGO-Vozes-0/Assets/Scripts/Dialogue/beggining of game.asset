@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4549868140310268884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34bf99a3ef2577143a2afe142947baa9, type: 3}
+  m_Name: 08a6def8-aa04-42ff-b542-2505088a700f
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: ' Me mostre o caminho.'
+  children:
+  - b9af4ba4-2b9c-497f-9d2c-b3835105a33f
+  rect:
+    serializedVersion: 2
+    x: 979
+    y: 245
+    width: 200
+    height: 100
+--- !u!114 &-958762342136709574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34bf99a3ef2577143a2afe142947baa9, type: 3}
+  m_Name: b9af4ba4-2b9c-497f-9d2c-b3835105a33f
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: "Para prosseguir\u2026 voc\xEA deve me mostrar que sua mente est\xE1 t\xE3o
+    bem treinada quanto o seu corpo.  Complete o desafio das cores.  Eu vou te esperar
+    logo \xE0 frente."
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1238
+    y: 247
+    width: 200
+    height: 100
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14,4 +59,101 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodes:
   - {fileID: 1937592620856986253}
+  - {fileID: 8056362816169707423}
+  - {fileID: 2477297751152991082}
+  - {fileID: 6518705556219452794}
+  - {fileID: -4549868140310268884}
+  - {fileID: -958762342136709574}
   newNodeOffSet: {x: 250, y: 0}
+--- !u!114 &1937592620856986253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34bf99a3ef2577143a2afe142947baa9, type: 3}
+  m_Name: afe2add5-e935-4e05-8874-b8991ec06a11
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: "Agora que voc\xEA j\xE1 terminou o seu treino b\xE1sico, est\xE1 na hora
+    de saber a verdade por tr\xE1s da sua fam\xEDlia\u2026 e de todo o reino."
+  children:
+  - deec7c28-7719-4e21-b0e2-f55f1129cfa8
+  - eea4e8b0-a7a6-4c15-b28c-70660743c250
+  rect:
+    serializedVersion: 2
+    x: 125
+    y: 239
+    width: 200
+    height: 100
+--- !u!114 &2477297751152991082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34bf99a3ef2577143a2afe142947baa9, type: 3}
+  m_Name: eea4e8b0-a7a6-4c15-b28c-70660743c250
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: "Eu tenho um pressentimento de que n\xE3o vou gostar\u2026"
+  children:
+  - a8b566ca-fa88-4635-80b2-2320b6af92f8
+  rect:
+    serializedVersion: 2
+    x: 381
+    y: 353
+    width: 200
+    height: 100
+--- !u!114 &6518705556219452794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34bf99a3ef2577143a2afe142947baa9, type: 3}
+  m_Name: a8b566ca-fa88-4635-80b2-2320b6af92f8
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: "Haja o que houver, espero que voc\xEA continue com esse seu cora\xE7\xE3o
+    puro. Afinal\u2026  O conhecimento e a verdade s\xE3o a maldi\xE7\xE3o imposta
+    sobre n\xF3s, humanos. Quanto mais sabemos, mais longe estamos do para\xEDso."
+  children:
+  - 08a6def8-aa04-42ff-b542-2505088a700f
+  rect:
+    serializedVersion: 2
+    x: 712
+    y: 244
+    width: 200
+    height: 100
+--- !u!114 &8056362816169707423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34bf99a3ef2577143a2afe142947baa9, type: 3}
+  m_Name: deec7c28-7719-4e21-b0e2-f55f1129cfa8
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: Seja o que for, eu quero saber a verdade. Sem mais segredos.
+  children:
+  - a8b566ca-fa88-4635-80b2-2320b6af92f8
+  rect:
+    serializedVersion: 2
+    x: 387
+    y: 138
+    width: 200
+    height: 100

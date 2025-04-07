@@ -15,6 +15,10 @@ public class CutSceneHandeler : MonoBehaviour
     public void Start()
     {
         cutsceneElements = GetComponents<CutsceneElementBase>();
+
+       
+
+        
     }
 
 

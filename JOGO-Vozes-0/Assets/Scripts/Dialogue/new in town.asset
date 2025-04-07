@@ -1,95 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8494745662858794102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34bf99a3ef2577143a2afe142947baa9, type: 3}
-  m_Name: 4db952f7-1b1b-4afc-aea1-e1ea60d5de94
-  m_EditorClassIdentifier: 
-  isPlayerSpeaking: 1
-  text: i lived here my whole life
-  children:
-  - e433e9d9-a437-4075-8f3a-2d5464cd7377
-  - 54047763-bf08-46ac-a6e6-3218e83dcf97
-  rect:
-    serializedVersion: 2
-    x: 701
-    y: 30
-    width: 200
-    height: 100
---- !u!114 &-4858986784713376844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34bf99a3ef2577143a2afe142947baa9, type: 3}
-  m_Name: 4d33d84b-9996-4cef-a4b8-949fdcc1fc83
-  m_EditorClassIdentifier: 
-  isPlayerSpeaking: 0
-  text: really?? you ? you look more weak than the sticks that i used for training
-    when i was a child
-  children:
-  - 8fd2f115-d279-4a5c-8d83-11b995e720d3
-  - abf604c8-c9a7-4994-bf69-147e1802e875
-  rect:
-    serializedVersion: 2
-    x: 993
-    y: 339
-    width: 200
-    height: 100
---- !u!114 &-3766069612308263911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34bf99a3ef2577143a2afe142947baa9, type: 3}
-  m_Name: ea8df046-c72c-436b-b814-f84a7a28f6d4
-  m_EditorClassIdentifier: 
-  isPlayerSpeaking: 1
-  text: I AM HERE TO PURGE ALL EVIL
-  children:
-  - 4d33d84b-9996-4cef-a4b8-949fdcc1fc83
-  rect:
-    serializedVersion: 2
-    x: 653
-    y: 306
-    width: 200
-    height: 100
---- !u!114 &-2835044755155058879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34bf99a3ef2577143a2afe142947baa9, type: 3}
-  m_Name: 7d3540d7-9e80-45b2-aa55-360e58b608c8
-  m_EditorClassIdentifier: 
-  isPlayerSpeaking: 0
-  text: i guess death has chose you
-  children: []
-  rect:
-    serializedVersion: 2
-    x: 1606
-    y: 287
-    width: 200
-    height: 100
 --- !u!114 &-1765073914227988687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,56 +15,11 @@ MonoBehaviour:
   isPlayerSpeaking: 0
   text: WHY ARE YOU HERE, STATE YOU'RE BUSINESS
   children:
-  - 4db952f7-1b1b-4afc-aea1-e1ea60d5de94
   - 328bf23d-93c3-404f-9b3f-8e23c2bd2ac2
-  - ea8df046-c72c-436b-b814-f84a7a28f6d4
   rect:
     serializedVersion: 2
     x: 458
     y: 155
-    width: 200
-    height: 100
---- !u!114 &-1756167939152200190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34bf99a3ef2577143a2afe142947baa9, type: 3}
-  m_Name: 501275b9-f867-4401-ba87-8e015c28ee32
-  m_EditorClassIdentifier: 
-  isPlayerSpeaking: 1
-  text: why would i lie
-  children:
-  - 001a1e76-16f0-408c-8eb2-f9e06100ba37
-  rect:
-    serializedVersion: 2
-    x: 1369
-    y: 150
-    width: 200
-    height: 100
---- !u!114 &-1109043105825703008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34bf99a3ef2577143a2afe142947baa9, type: 3}
-  m_Name: 0a4af17b-4198-4f28-b240-39257f474fcb
-  m_EditorClassIdentifier: 
-  isPlayerSpeaking: 0
-  text: i will acompany while a interrogate you
-  children: []
-  rect:
-    serializedVersion: 2
-    x: 1619
-    y: 21
     width: 200
     height: 100
 --- !u!114 &11400000
@@ -171,41 +36,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodes:
   - {fileID: -1765073914227988687}
-  - {fileID: -8494745662858794102}
-  - {fileID: -3766069612308263911}
-  - {fileID: -4858986784713376844}
-  - {fileID: 7997937470552326551}
-  - {fileID: 91392740849240521}
-  - {fileID: -1756167939152200190}
-  - {fileID: 1520856727194900087}
-  - {fileID: 4974008180980824413}
-  - {fileID: 7033554570023471804}
-  - {fileID: -2835044755155058879}
-  - {fileID: 5140423386799528329}
-  - {fileID: -1109043105825703008}
   newNodeOffSet: {x: 250, y: 0}
---- !u!114 &91392740849240521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34bf99a3ef2577143a2afe142947baa9, type: 3}
-  m_Name: d40981d0-d758-4e21-be62-2f2077099671
-  m_EditorClassIdentifier: 
-  isPlayerSpeaking: 1
-  text: no, acutally i am here because my master told to find a shining tree
-  children:
-  - 0a4af17b-4198-4f28-b240-39257f474fcb
-  rect:
-    serializedVersion: 2
-    x: 1347
-    y: 18
-    width: 200
-    height: 100
 --- !u!114 &1196712887422815900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,29 +56,6 @@ MonoBehaviour:
     serializedVersion: 2
     x: 796
     y: 190
-    width: 200
-    height: 100
---- !u!114 &1520856727194900087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34bf99a3ef2577143a2afe142947baa9, type: 3}
-  m_Name: 8fd2f115-d279-4a5c-8d83-11b995e720d3
-  m_EditorClassIdentifier: 
-  isPlayerSpeaking: 1
-  text: you dont need to believe me i just need your permission to pass, not you're
-    respect
-  children:
-  - d763c7e1-1d91-42ba-90b3-9f80dbe43018
-  rect:
-    serializedVersion: 2
-    x: 1329
-    y: 467
     width: 200
     height: 100
 --- !u!114 &2527656537302351243
@@ -270,93 +78,5 @@ MonoBehaviour:
     serializedVersion: 2
     x: 813
     y: 80
-    width: 200
-    height: 100
---- !u!114 &4974008180980824413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34bf99a3ef2577143a2afe142947baa9, type: 3}
-  m_Name: abf604c8-c9a7-4994-bf69-147e1802e875
-  m_EditorClassIdentifier: 
-  isPlayerSpeaking: 1
-  text: and who asked your opnion
-  children:
-  - 7d3540d7-9e80-45b2-aa55-360e58b608c8
-  rect:
-    serializedVersion: 2
-    x: 1335
-    y: 295
-    width: 200
-    height: 100
---- !u!114 &5140423386799528329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34bf99a3ef2577143a2afe142947baa9, type: 3}
-  m_Name: 001a1e76-16f0-408c-8eb2-f9e06100ba37
-  m_EditorClassIdentifier: 
-  isPlayerSpeaking: 0
-  text: BECAUSE ALL OF YOU of the  *Clan of the Tainted Blood* DO... i am the protector
-    of this sacred forest, i will kill you know before you become a greater threath
-  children: []
-  rect:
-    serializedVersion: 2
-    x: 1619
-    y: 150
-    width: 200
-    height: 100
---- !u!114 &7033554570023471804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34bf99a3ef2577143a2afe142947baa9, type: 3}
-  m_Name: d763c7e1-1d91-42ba-90b3-9f80dbe43018
-  m_EditorClassIdentifier: 
-  isPlayerSpeaking: 0
-  text: I WILL SHOW YOU MANNER SPOILED CHILD
-  children: []
-  rect:
-    serializedVersion: 2
-    x: 1623
-    y: 464
-    width: 200
-    height: 100
---- !u!114 &7997937470552326551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34bf99a3ef2577143a2afe142947baa9, type: 3}
-  m_Name: 54047763-bf08-46ac-a6e6-3218e83dcf97
-  m_EditorClassIdentifier: 
-  isPlayerSpeaking: 0
-  text: really?
-  children:
-  - d40981d0-d758-4e21-be62-2f2077099671
-  - 501275b9-f867-4401-ba87-8e015c28ee32
-  rect:
-    serializedVersion: 2
-    x: 1108
-    y: 49
     width: 200
     height: 100
