@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using Yarn.Unity;
 
 public class DialogueCutsceneTrigger : MonoBehaviour
@@ -6,6 +7,7 @@ public class DialogueCutsceneTrigger : MonoBehaviour
     [SerializeField] private DialogueRunner dialogueRunner;
     [SerializeField] private string dialogueNode;
     [SerializeField] private Player player;
+    [SerializeField] private Tilemap _tilemap;
 
     private SpriteRenderer _spriteRenderer;
     private bool _hasTriggered;
@@ -35,5 +37,6 @@ public class DialogueCutsceneTrigger : MonoBehaviour
         _spriteRenderer.enabled = false;
         player.inputFrozen = false;
         gameObject.SetActive(false);
+        _tilemap.gameObject.SetActive(true);
     }
 }
