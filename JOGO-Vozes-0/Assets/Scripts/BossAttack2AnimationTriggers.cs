@@ -27,7 +27,7 @@ public class BossAttack2AnimationTriggers : MonoBehaviour
 
     private void AttackTrigger2()
     {
-        var colliders = Physics2D.OverlapCircleAll(_position, enemy2.attackCheckRadius);
+        var colliders = Physics2D.OverlapCircleAll(_position, enemy2.attackCheckRadius * 0.6f);
 
         foreach(var hit in colliders)
         {

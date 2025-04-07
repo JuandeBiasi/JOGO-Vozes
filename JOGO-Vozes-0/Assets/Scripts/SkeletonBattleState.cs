@@ -34,7 +34,7 @@ public class SkeletonBattleState : EnemyState
                     stateMachine.ChangeState(enemy.attackState);
             } else {
                 if (CanAttack() && enemy.isBoss 
-                                && (enemy.IsPlayerDetected().distance > enemy.attackDistance + 5))
+                                && (enemy.IsPlayerDetected().distance > enemy.attackDistance + 4))
                     stateMachine.ChangeState(enemy.attack2State);
             }
         }
