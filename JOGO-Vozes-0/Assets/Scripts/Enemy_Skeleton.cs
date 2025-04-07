@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Yarn.Unity;
 
 public class Enemy_Skeleton : Enemy
@@ -8,6 +9,8 @@ public class Enemy_Skeleton : Enemy
     public GameObject foodPrefab;
     [SerializeField] public bool isBoss = false;
     [SerializeField] private DialogueRunner _dialogueRunner;
+    [SerializeField] private UnityEvent onDead;
+
     #region States
     public SkeletonIdleState idleState { get; private set; }
     public SkeletonMoveState moveState { get; private set; }
@@ -68,6 +71,7 @@ public class Enemy_Skeleton : Enemy
         DropItem();
 
         stateMachine.ChangeState(deadState);
+        onDead?.Invoke();
     }
 
     private void DropItem()

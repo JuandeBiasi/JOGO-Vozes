@@ -49,17 +49,20 @@ LYRA: Quem são vocês? Por que me ajudaram?
 
 PRÍNCIPE: (ofegante, mas gentil) Não podíamos ignorar. Ninguém merece enfrentar isso sozinho.
 
-SAPO: (limpando sangue da perna)
+SAPO: (limpando sangue da perna) …
 
 LYRA: Eu conheço esse monstro… Ele era um guardião da floresta, antes da corrupção tomá-lo. Vocês... lutam contra isso?
 
 PRÍNCIPE: Estamos buscando respostas. E talvez um modo de restaurar o que foi perdido.
 
-LYRA: (Olha para o chão, pensativa. Pela primeira vez, hesita menos. Se levanta, encara os dois)
+LYRA: Então... para onde estão indo agora?
 
-LYRA: Se estão indo para a biblioteca… deixem-me ir com vocês. Tenho perguntas também. E talvez... algumas respostas.
+    -> Estamos indo para a biblioteca.
+        <<set $lyraInGroup = true>>
+        LYRA: Se estão indo para a biblioteca… deixem-me ir com vocês. Tenho perguntas também. E talvez... algumas respostas.
 
-SAPO: (sorrindo torto) Ótimo. Agora temos uma guardiã da floresta a bordo. Falta só um cozinheiro.
+        SAPO: (sorrindo torto) Ótimo. Agora temos uma guardiã da floresta a bordo. Falta só um cozinheiro.
+
+    -> Ainda não sabemos ao certo.
+        LYRA: Entendo… Se descobrirem algo, me avisem. Tenho motivos para continuar lutando também.
 ===
-
-

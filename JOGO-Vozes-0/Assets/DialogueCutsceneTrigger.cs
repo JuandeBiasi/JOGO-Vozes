@@ -1,4 +1,6 @@
+using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
 using Yarn.Unity;
 
@@ -7,7 +9,9 @@ public class DialogueCutsceneTrigger : MonoBehaviour
     [SerializeField] private DialogueRunner dialogueRunner;
     [SerializeField] private string dialogueNode;
     [SerializeField] private Player player;
-    [SerializeField] private Tilemap _tilemap;
+    [FormerlySerializedAs("_tilemap")] [SerializeField] private Tilemap tilemap;
+    [SerializeField] private Cinemachine.CinemachineVirtualCamera virtualCamera;
+    [FormerlySerializedAs("targetTransform")] [SerializeField] private Enemy_Skeleton enemySkeleton;
 
     private SpriteRenderer _spriteRenderer;
     private bool _hasTriggered;
@@ -29,14 +33,23 @@ public class DialogueCutsceneTrigger : MonoBehaviour
         dialogueRunner.StartDialogue(dialogueNode);
         _hasTriggered = true;
         player.inputFrozen = true;
+        virtualCamera.Follow = gameObject.transform;
     }
     
     private void OnNodeFinished(string nodeName)
     {
+        if  (nodeName != dialogueNode) return;
+        
         _hasTriggered = false;
         _spriteRenderer.enabled = false;
         player.inputFrozen = false;
         gameObject.SetActive(false);
-        _tilemap.gameObject.SetActive(true);
+        tilemap.gameObject.SetActive(true);
+        virtualCamera.Follow = player.transform;
+    }
+
+    public void BossDead()
+    {
+        tilemap.gameObject.SetActive(false);
     }
 }

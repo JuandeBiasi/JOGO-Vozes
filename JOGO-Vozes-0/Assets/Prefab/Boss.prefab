@@ -424,7 +424,7 @@ MonoBehaviour:
   stunDuration: 1
   stunDirection: {x: 10, y: 12}
   counterImage: {fileID: 858289556335958477}
-  moveSpeed: 5
+  moveSpeed: 3
   idleTime: 2
   battleTime: 4
   attackDistance: 2.15
@@ -432,6 +432,7 @@ MonoBehaviour:
   lastTimeAttack: 0
   foodPrefab: {fileID: 866741192993113981, guid: d399d694fa2853741ac96498ff6542c0, type: 3}
   isBoss: 1
+  _dialogueRunner: {fileID: 0}
 --- !u!114 &2546807847272269100
 MonoBehaviour:
   m_ObjectHideFlags: 0
