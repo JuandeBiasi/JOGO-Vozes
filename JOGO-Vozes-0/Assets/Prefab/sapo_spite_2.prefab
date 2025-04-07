@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 4672598655627162014}
   - component: {fileID: 7401918990916321079}
   - component: {fileID: 7939459740269326283}
+  - component: {fileID: 3542053834353832350}
   m_Layer: 0
   m_Name: sapo_spite_2
   m_TagString: Untagged
@@ -163,7 +164,7 @@ Transform:
   m_GameObject: {fileID: 8776690956926459826}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 438.91, y: 64.14, z: 0}
+  m_LocalPosition: {x: 438.91, y: 63.85, z: 0}
   m_LocalScale: {x: 4.0229, y: 4.0229, z: 4.0229}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -282,3 +283,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.31, y: 0.61}
   m_EdgeRadius: 0
+--- !u!95 &3542053834353832350
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8776690956926459826}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e1e7146f860953e4782a6d6bb10c2065, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
