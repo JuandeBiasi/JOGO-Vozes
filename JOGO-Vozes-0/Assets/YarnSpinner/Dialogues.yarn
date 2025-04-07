@@ -2,7 +2,7 @@
 tags:
 ---
 SAPO: Agora que você já terminou o seu treino básico, está na hora de saber a verdade por trás da sua família… e de todo o reino.
-PRÍNCIPE: *encara o sapo com firmeza*
+PRÍNCIPE: <i>encara o sapo com firmeza</i>
     -> Seja o que for, eu quero saber a verdade. Sem mais segredos.
     -> Eu tenho um pressentimento de que não vou gostar…
 
@@ -32,7 +32,7 @@ title: Dialog3
 JOGADOR: Voltei às ruínas. Encontrei parte dos cristais, mas o último estava faltando...
 
 SAPO: Então você viu...
-SAPO: O último cristal é o Vermelho. O mais instável de todos. Por isso não foi deixado nas ruínas.
+SAPO: O último cristal é o <b>Vermelho</b>. O mais instável de todos. Por isso não foi deixado nas ruínas.
 SAPO: Agora você tem tudo o que precisa!
 ===
 
@@ -40,16 +40,17 @@ title: Dialog4
 ---
 PRÍNCIPE: Não podemos deixá-la assim…
 
-SAPO: (resmungando) Isso vai nos atrasar...
+SAPO: <i>resmungando</i> Isso vai nos atrasar...
 ===
 
 title: Dialog5
 ---
 LYRA: Quem são vocês? Por que me ajudaram?
 
-PRÍNCIPE: (ofegante, mas gentil) Não podíamos ignorar. Ninguém merece enfrentar isso sozinho.
+PRÍNCIPE: <i>ofegante, mas gentil</i> 
+Não podíamos ignorar. Ninguém merece enfrentar isso sozinho.
 
-SAPO: (limpando sangue da perna) …
+SAPO: <i>limpando sangue da perna</i> …
 
 LYRA: Eu conheço esse monstro… Ele era um guardião da floresta, antes da corrupção tomá-lo. Vocês... lutam contra isso?
 
@@ -61,8 +62,33 @@ LYRA: Então... para onde estão indo agora?
         <<set $lyraInGroup = true>>
         LYRA: Se estão indo para a biblioteca… deixem-me ir com vocês. Tenho perguntas também. E talvez... algumas respostas.
 
-        SAPO: (sorrindo torto) Ótimo. Agora temos uma guardiã da floresta a bordo. Falta só um cozinheiro.
+        SAPO: <i>sorrindo torto</i> Ótimo. Agora temos uma guardiã da floresta a bordo. Falta só um cozinheiro.
 
     -> Ainda não sabemos ao certo.
         LYRA: Entendo… Se descobrirem algo, me avisem. Tenho motivos para continuar lutando também.
+===
+title: DialogTutorial
+---
+SAPO: Tá travado assim por quê? A espada não vai sair andando sozinha. Use o <b>Botão Esquerdo do Mouse</b>.
+
+SAPO: <i>balança a cabeça, desapontado</i> 
+Primeiro… mexe essas pernas, alteza. Anda com leveza <b>W, A, S, D</b>  
+Não é pra pisar que nem um pato procurando a mãe.
+
+SAPO: <i>cutuca com o cajado</i> 
+Se for correr de verdade segura **Shift**. Não gasta fôlego à toa.
+
+SAPO: Melhor. Agora... se você ver o bicho recuar — arremesse a espada. Com o <b>Botão Direito do Mouse</b>  
+Mas lembra sem espada na mão, teu pescoço fica mais fácil de pegar.
+
+SAPO: <i>dando risada</i> 
+Funciona até ela não voltar.  
+
+SAPO: <i>cruza os braços, satisfeito... ou o mais perto disso</i> 
+Hm. Tá quase parecendo alguém que sabe o que tá fazendo.
+E Se precisar algo, abre a bolsa com <b>I</b>
+
+SAPO: <i>vira de costas, resmungando</i> 
+Quase já é melhor do que "morto"...  
+Vamos. Em frente! E pula com o <b>ESPAÇO</b>
 ===
